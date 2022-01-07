@@ -1,7 +1,7 @@
-package scrooge.my.apptest.base
+package scrooge.my.apptest.domain
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-open class BaseApplication: Application()
+open class MyApplication: Application()
