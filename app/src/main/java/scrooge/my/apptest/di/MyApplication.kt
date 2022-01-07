@@ -1,4 +1,4 @@
-package scrooge.my.apptest.domain
+package scrooge.my.apptest.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
