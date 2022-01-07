@@ -5,4 +5,9 @@
     <string name="default_name_specialist">Иван Иванов</string>
     <string name="default_birthday_specialist">22.11.1987</string>
     <string name="default_name_speciality">Менеджер</string>
+    <string name="fl_name_deafult">Имя Фамилия</string>
+    <string name="speciality_info_default">Спецыальность</string>
+    <string name="birthday_default_info">Дата рожния</string>
+    <string name="age_default_info">Возраст</string>
+    <string name="default_age_specialist">35лет</string>
 </resources>

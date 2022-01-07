@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/svDetailSpecialist"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presentation.detail_specialist.DetailSpecialistFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainClDetailSpecialist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/ivDetailSpecialist"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="-32dp"
+            android:background="@drawable/default_image_specialist"
+            android:elevation="7dp"
+            app:layout_constraintEnd_toEndOf="@+id/mcvDetailSpecialist"
+            app:layout_constraintStart_toStartOf="@+id/mcvDetailSpecialist"
+            app:layout_constraintTop_toTopOf="@+id/mcvDetailSpecialist" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvDetailSpecialist"
+            style="?attr/materialCardViewElevatedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="64dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDetailSpecialist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/flNameInfoDetailSpecialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="100dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/fl_name_deafult"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvFirstLastNameDetailSpecialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/default_name_specialist"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/flNameInfoDetailSpecialist"
+                    app:layout_constraintTop_toBottomOf="@+id/flNameInfoDetailSpecialist" />
+
+
+                <TextView
+                    android:id="@+id/specialityInfoDetailSpecialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/speciality_info_default"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/flNameInfoDetailSpecialist"
+                    app:layout_constraintTop_toBottomOf="@+id/tvFirstLastNameDetailSpecialist" />
+
+                <TextView
+                    android:id="@+id/tvSpecialityDetailSpecialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/default_name_speciality"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/specialityInfoDetailSpecialist"
+                    app:layout_constraintTop_toBottomOf="@+id/specialityInfoDetailSpecialist" />
+
+
+                <TextView
+                    android:id="@+id/birthdayInfoDetailSpecialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="50dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/birthday_default_info"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/flNameInfoDetailSpecialist" />
+
+                <TextView
+                    android:id="@+id/tvBirthdayDetailSpecialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/default_birthday_specialist"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/birthdayInfoDetailSpecialist"
+                    app:layout_constraintTop_toBottomOf="@+id/birthdayInfoDetailSpecialist" />
+
+                <TextView
+                    android:id="@+id/ageInfoDetailSpecialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/age_default_info"
+                    android:textColor="@color/color_text_secondary"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvBirthdayDetailSpecialist"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBirthdayDetailSpecialist" />
+
+                <TextView
+                    android:id="@+id/tvAgeDetailSpecialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/default_age_specialist"
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/ageInfoDetailSpecialist"
+                    app:layout_constraintTop_toBottomOf="@+id/ageInfoDetailSpecialist" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
