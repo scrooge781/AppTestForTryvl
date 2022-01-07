@@ -6,7 +6,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import scrooge.my.apptest.data.model.SpecialistItem
+import scrooge.my.apptest.data.model.Specialist
 import scrooge.my.apptest.data.remote.ParsingJson
 import javax.inject.Singleton
 
@@ -16,7 +16,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideParseJson(@ApplicationContext context: Context): List<SpecialistItem>? {
+    fun provideParseJson(@ApplicationContext context: Context): List<Specialist>? {
         return ParsingJson.getAssetJsonData(context)
     }
 

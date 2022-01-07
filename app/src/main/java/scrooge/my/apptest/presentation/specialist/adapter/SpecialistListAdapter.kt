@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.bumptech.glide.Glide
 import scrooge.my.apptest.R
-import scrooge.my.apptest.data.model.SpecialistItem
+import scrooge.my.apptest.data.model.Specialist
 
 class SpecialistListAdapter(private val context: Context) :
-    ListAdapter<SpecialistItem, SpecialistListViewHolder>(SpecialistListDiffCallback()) {
+    ListAdapter<Specialist, SpecialistListViewHolder>(SpecialistListDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpecialistListViewHolder {
         val view = LayoutInflater.from(parent.context)

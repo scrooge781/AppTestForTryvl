@@ -1,14 +1,14 @@
 package scrooge.my.apptest.presentation.specialist.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import scrooge.my.apptest.data.model.SpecialistItem
+import scrooge.my.apptest.data.model.Specialist
 
-class SpecialistListDiffCallback : DiffUtil.ItemCallback<SpecialistItem>() {
-    override fun areItemsTheSame(oldItem: SpecialistItem, newItem: SpecialistItem): Boolean {
-        return oldItem.id == newItem.id
+class SpecialistListDiffCallback : DiffUtil.ItemCallback<Specialist>() {
+    override fun areItemsTheSame(old: Specialist, aNew: Specialist): Boolean {
+        return old.id == aNew.id
     }
 
-    override fun areContentsTheSame(oldItem: SpecialistItem, newItem: SpecialistItem): Boolean {
-        return oldItem == newItem
+    override fun areContentsTheSame(old: Specialist, aNew: Specialist): Boolean {
+        return old == aNew
     }
 }

@@ -2,7 +2,7 @@ package scrooge.my.apptest.data.remote
 
 import android.content.Context
 import android.util.Log
-import scrooge.my.apptest.data.model.SpecialistItem
+import scrooge.my.apptest.data.model.Specialist
 import java.io.IOException
 import com.google.gson.Gson
 
@@ -16,7 +16,7 @@ class ParsingJson {
     companion object{
         private const val NAME_JSON = "specialist.json"
 
-        fun getAssetJsonData(context: Context): List<SpecialistItem>? {
+        fun getAssetJsonData(context: Context): List<Specialist>? {
             val json: String
             try {
                 val inputStream = context.assets.open(NAME_JSON)
@@ -31,7 +31,7 @@ class ParsingJson {
             // print the data
             Log.i("data", json)
 
-            val type: Type = object : TypeToken<List<SpecialistItem?>?>() {}.type
+            val type: Type = object : TypeToken<List<Specialist?>?>() {}.type
 
             return Gson().fromJson(json, type)
         }
