@@ -1,17 +1,16 @@
-package scrooge.my.apptest.presentation.speciality
+package scrooge.my.apptest.presentation.specialist
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import dagger.hilt.android.AndroidEntryPoint
-import scrooge.my.apptest.databinding.FragmentSpecialityListBinding
+import scrooge.my.apptest.R
+import scrooge.my.apptest.databinding.FragmentSpecialistListBinding
 
-@AndroidEntryPoint
-class SpecialityListFragment : Fragment() {
+class SpecialistListFragment : Fragment() {
 
-    private var _binding: FragmentSpecialityListBinding? = null
+    private var _binding: FragmentSpecialistListBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,7 +18,7 @@ class SpecialityListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentSpecialityListBinding.inflate(inflater, container, false)
+        _binding = FragmentSpecialistListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -27,5 +26,4 @@ class SpecialityListFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
 }

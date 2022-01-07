@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="?attr/materialCardViewElevatedStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="?attr/materialCardViewElevatedStyle"
     app:cardCornerRadius="12dp"
     app:cardElevation="6dp"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clSpeciality"
+        android:id="@+id/clItemSpeciality"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <android.widget.ImageView
-            android:id="@+id/ivSpeciality"
+            android:id="@+id/ivItemSpeciality"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
@@ -26,17 +27,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvSpeciality"
+            android:id="@+id/tvItemSpeciality"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="Менеджер"
+            android:text="@string/default_name_speciality"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivSpeciality"
-            app:layout_constraintStart_toEndOf="@+id/ivSpeciality"
-            app:layout_constraintTop_toTopOf="@+id/ivSpeciality" />
+            app:layout_constraintBottom_toBottomOf="@+id/ivItemSpeciality"
+            app:layout_constraintStart_toEndOf="@+id/ivItemSpeciality"
+            app:layout_constraintTop_toTopOf="@+id/ivItemSpeciality" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
