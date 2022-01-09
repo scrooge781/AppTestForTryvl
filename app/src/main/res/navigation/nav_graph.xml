@@ -22,5 +22,17 @@
         <argument
             android:name="getSpecialty"
             app:argType="scrooge.my.apptest.data.model.Specialty" />
+        <action
+            android:id="@+id/action_specialistListFragment_to_detailSpecialistFragment"
+            app:destination="@id/detailSpecialistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailSpecialistFragment"
+        android:name="scrooge.my.apptest.presentation.detail_specialist.DetailSpecialistFragment"
+        android:label="fragment_detail_specialist"
+        tools:layout="@layout/fragment_detail_specialist" >
+        <argument
+            android:name="getSpecialist"
+            app:argType="scrooge.my.apptest.data.model.Specialist" />
     </fragment>
 </navigation>

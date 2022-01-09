@@ -12,6 +12,6 @@ interface SpecialistDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveSpecialistItem(specialist: Specialist)
 
-    @Query("SELECT * FROM specialist")
-    fun getSpecialistItem(): List<Specialist>
+    @Query("SELECT * FROM specialist WHERE speciality_id =:specialist_id")
+    fun getSpecialist(specialist_id: Int): List<Specialist>
 }

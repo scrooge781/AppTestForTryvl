@@ -10,8 +10,8 @@ class SpecialistService @Inject constructor(
         specialistDao.saveSpecialistItem(specialist)
     }
 
-    override fun getSpecialistItem(): List<Specialist> {
-        return specialistDao.getSpecialistItem()
+    override fun getSpecialist(specialist_id: Int): List<Specialist> {
+        return specialistDao.getSpecialist(specialist_id)
     }
 
 

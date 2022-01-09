@@ -3,10 +3,12 @@ package scrooge.my.apptest.presentation.specialist.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import com.bumptech.glide.Glide
 import scrooge.my.apptest.R
 import scrooge.my.apptest.data.model.Specialist
+import scrooge.my.apptest.presentation.specialist.SpecialistListFragmentDirections
 
 class SpecialistListAdapter(private val context: Context) :
     ListAdapter<Specialist, SpecialistListViewHolder>(SpecialistListDiffCallback()) {
@@ -27,7 +29,11 @@ class SpecialistListAdapter(private val context: Context) :
             .error(R.drawable.default_image_specialist)
             .into(holder.imageSpecialist)
         holder.viewSpecialist.setOnClickListener {
-            print("tap")
+            val action =
+                SpecialistListFragmentDirections.actionSpecialistListFragmentToDetailSpecialistFragment(
+                    specialistItem
+                )
+            it.findNavController().navigate(action)
         }
 
     }

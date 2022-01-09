@@ -8,19 +8,26 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import scrooge.my.apptest.domain.SaveDataLocalUseCase
 import javax.inject.Inject
 import kotlinx.coroutines.launch
+import scrooge.my.apptest.data.model.Specialist
 import scrooge.my.apptest.data.model.Specialty
+import scrooge.my.apptest.domain.GetSpecialist
 import scrooge.my.apptest.domain.GetSpeciality
 
 @HiltViewModel
 class MainViewModel @Inject
 constructor(
     private val saveDataLocalUseCase: SaveDataLocalUseCase,
-    private val getSpeciality: GetSpeciality
+    private val getSpeciality: GetSpeciality,
+    private val getSpecialist: GetSpecialist
 ) : ViewModel() {
 
     private val _listSpeciality = MutableLiveData<List<Specialty>>()
     val listSpecialty: LiveData<List<Specialty>>
         get() = _listSpeciality
+
+    private val _listSpecialist = MutableLiveData<List<Specialist>>()
+    val listSpecialist: LiveData<List<Specialist>>
+        get() = _listSpecialist
 
     fun getSpeciality() {
         viewModelScope.launch {
@@ -35,5 +42,11 @@ constructor(
             }
         }
 
+    }
+
+    fun getSpecialist(speciality_id: Int) {
+        viewModelScope.launch {
+            _listSpecialist.value = getSpecialist.getSpecialist(speciality_id)
+        }
     }
 }
