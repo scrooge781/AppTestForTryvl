@@ -18,12 +18,14 @@ data class Specialist(
     val birthday: String,
     val f_name: String,
     val l_name: String,
+    val speciality_id: Int
 
-    ) : Parcelable {
+) : Parcelable {
     constructor(
         avatr_url: String,
         birthday: String,
         f_name: String,
-        l_name: String
-    ) : this(0, avatr_url, birthday, f_name, l_name)
+        l_name: String,
+        speciality_id: Int
+    ) : this(0, avatr_url, birthday, f_name, l_name, speciality_id)
 }
