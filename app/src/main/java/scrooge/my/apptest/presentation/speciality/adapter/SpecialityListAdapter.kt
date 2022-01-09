@@ -2,9 +2,11 @@ package scrooge.my.apptest.presentation.speciality.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import scrooge.my.apptest.R
 import scrooge.my.apptest.data.model.Specialty
+import scrooge.my.apptest.presentation.speciality.SpecialityListFragmentDirections
 
 class SpecialityListAdapter :
     ListAdapter<Specialty, SpecialityListViewHolder>(SpecialityListDiffCallback()) {
@@ -19,7 +21,11 @@ class SpecialityListAdapter :
         val specialityItem = getItem(position)
         holder.speciality.text = specialityItem.name
         holder.viewSpeciality.setOnClickListener {
-            print("tap")
+            val action =
+                SpecialityListFragmentDirections.actionSpecialityListFragmentToSpecialistListFragment(
+                    specialityItem
+                )
+            it.findNavController().navigate(action)
         }
     }
 

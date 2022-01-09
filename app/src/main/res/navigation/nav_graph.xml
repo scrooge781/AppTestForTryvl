@@ -9,5 +9,18 @@
         android:id="@+id/specialityListFragment"
         android:name="scrooge.my.apptest.presentation.speciality.SpecialityListFragment"
         android:label="fragment_speciality_list"
-        tools:layout="@layout/fragment_speciality_list" />
+        tools:layout="@layout/fragment_speciality_list" >
+        <action
+            android:id="@+id/action_specialityListFragment_to_specialistListFragment"
+            app:destination="@id/specialistListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/specialistListFragment"
+        android:name="scrooge.my.apptest.presentation.specialist.SpecialistListFragment"
+        android:label="fragment_specialist_list"
+        tools:layout="@layout/fragment_specialist_list" >
+        <argument
+            android:name="getSpecialty"
+            app:argType="scrooge.my.apptest.data.model.Specialty" />
+    </fragment>
 </navigation>

@@ -17,19 +17,18 @@ class SaveDataLocalUseCase(
         val listSpecialist = getDataRemoteUsesCase.getDataRemote()!!
 
         for (i in listSpecialist) {
+            val birthday = if(i.birthday != null) i.birthday else ""
             val specialist = Specialist(
                 avatr_url = i.avatr_url,
-                birthday = parsingDate(i.birthday),
+                birthday = parsingDate(birthday),
                 f_name = capitalizeName(i.f_name),
                 l_name = capitalizeName(i.l_name),
                 speciality_id = i.specialty[0].specialty_id
             )
             specialistService.saveSpecialistItem(specialist)
 
-            if (specialityService.getSpecialtyId(i.specialty[0].specialty_id) == null) {
-                val speciality = Specialty(i.specialty[0].specialty_id, i.specialty[0].name)
-                specialityService.saveSpecialityItem(speciality)
-            }
+            val speciality = Specialty(i.specialty[0].specialty_id, i.specialty[0].name)
+            specialityService.saveSpecialityItem(speciality)
 
         }
 

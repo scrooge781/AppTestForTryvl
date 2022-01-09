@@ -12,17 +12,16 @@ object UtilFunction {
     }
 
     fun parsingDate(string: String): String {
-        return if (string != null) {
-            var date: String = "--"
+        return if (string.isNotEmpty()) {
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                val firstApiFormat =  DateTimeFormatter.ofPattern("yyyy-MM-dd")
+                val firstApiFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd")
                 val data = LocalDate.parse(string, firstApiFormat)
-                date = "${data.dayOfMonth}.${data.monthValue}.${data.year}"
+
+                "${data.dayOfMonth}.${data.monthValue}.${data.year}"
             } else {
                 "--"
             }
-            date
-
         } else "--"
     }
 }

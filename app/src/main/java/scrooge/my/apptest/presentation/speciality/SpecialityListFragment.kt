@@ -32,10 +32,13 @@ class SpecialityListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        viewModel.saveData()
+        setupObserverViewModel()
+        viewModel.getSpeciality()
+    }
 
-        viewModel.shouldCloseScreen.observe(viewLifecycleOwner){
-            println("this op saved data")
+    private fun setupObserverViewModel() {
+        viewModel.listSpecialty.observe(viewLifecycleOwner) {
+            specialityListAdapter.submitList(it)
         }
     }
 

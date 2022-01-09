@@ -9,6 +9,7 @@ import scrooge.my.apptest.data.local.speciality.SpecialityService
 import scrooge.my.apptest.data.model.Response
 import scrooge.my.apptest.data.remote.ParsingJson
 import scrooge.my.apptest.domain.GetDataRemoteUsesCase
+import scrooge.my.apptest.domain.GetSpeciality
 import scrooge.my.apptest.domain.SaveDataLocalUseCase
 import javax.inject.Singleton
 
@@ -31,5 +32,11 @@ object UseCaseModule {
         specialityService: SpecialityService
     ): SaveDataLocalUseCase {
         return SaveDataLocalUseCase(getDataRemoteUsesCase, specialistService, specialityService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetSpeciality(specialityService: SpecialityService): GetSpeciality {
+        return GetSpeciality(specialityService)
     }
 }
