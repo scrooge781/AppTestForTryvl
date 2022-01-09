@@ -14,6 +14,6 @@ interface SpecialityDao {
     @Query("SELECT * FROM specialty")
     fun getSpecialistItem(): List<Specialty>
 
-    @Query("SELECT * FROM specialist WHERE id =:idSpeciality")
+    @Query("SELECT * FROM specialty WHERE specialty_id =:idSpeciality")
     fun getSpecialtyId(idSpeciality: Int): Specialty
 }

@@ -2,21 +2,22 @@ package scrooge.my.apptest.data.remote
 
 import android.content.Context
 import android.util.Log
-import scrooge.my.apptest.data.model.Specialist
 import java.io.IOException
 import com.google.gson.Gson
 
 import com.google.gson.reflect.TypeToken
+import scrooge.my.apptest.data.model.Response
 
 import java.lang.reflect.Type
 
 
-class ParsingJson {
+class ParsingJson(val context: Context) {
 
-    companion object{
+    companion object {
         private const val NAME_JSON = "specialist.json"
+    }
 
-        fun getAssetJsonData(context: Context): List<Specialist>? {
+        fun getAssetJsonData(): Response? {
             val json: String
             try {
                 val inputStream = context.assets.open(NAME_JSON)
@@ -31,9 +32,9 @@ class ParsingJson {
             // print the data
             Log.i("data", json)
 
-            val type: Type = object : TypeToken<List<Specialist?>?>() {}.type
+            val type: Type = object : TypeToken<Response?>() {}.type
 
             return Gson().fromJson(json, type)
         }
-    }
+
 }

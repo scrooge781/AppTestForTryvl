@@ -10,13 +10,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @Entity
 data class Specialty(
-    @SerializedName("name")
-    @ColumnInfo(name = "name")
-    val name: String,
-
-    @SerializedName("specialty_id")
-    @ColumnInfo(name = "specialty_id")
     @PrimaryKey(autoGenerate = false)
-    val specialty_id: Int
-
+    val specialty_id: Int,
+    val name: String
 ) : Parcelable
