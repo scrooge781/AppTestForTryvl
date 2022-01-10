@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import scrooge.my.apptest.domain.SaveDataLocalUseCase
 import javax.inject.Inject
 import kotlinx.coroutines.launch
@@ -42,23 +43,23 @@ constructor(
                 saveDataLocalUseCase.saveDataLocal()
 
                 listSpecialty = getSpecialityUseCase.getSpeciality()
-                _listSpeciality.value = listSpecialty
+                _listSpeciality.postValue(listSpecialty)
             }
         }
 
     }
 
     fun getSpecialist(speciality_id: Int) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val listSpecialist = getSpecialistUseCase.getSpecialist(speciality_id)
-            _listSpecialist.value = listSpecialist
+            _listSpecialist.postValue(listSpecialist)
         }
     }
 
     fun getSpecialityId(speciality_id: Int) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val speciality = getSpecialityUseCase.getSpecialityId(speciality_id)
-            _speciality.value = speciality.name
+            _speciality.postValue(speciality.name)
         }
     }
 }
