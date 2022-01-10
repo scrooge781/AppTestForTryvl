@@ -45,7 +45,7 @@ class DetailSpecialistFragment : Fragment() {
         binding.tvFirstLastNameDetailSpecialist.text =
             "${args.getSpecialist.f_name} ${args.getSpecialist.l_name} "
         binding.tvBirthdayDetailSpecialist.text = args.getSpecialist.birthday
-        binding.tvAgeDetailSpecialist.text = "--"
+        binding.tvAgeDetailSpecialist.text = args.getSpecialist.age
     }
 
     private fun setupObserverViewModel() {

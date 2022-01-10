@@ -5,6 +5,7 @@ import scrooge.my.apptest.data.local.speciality.SpecialityService
 import scrooge.my.apptest.data.model.Specialist
 import scrooge.my.apptest.data.model.Specialty
 import scrooge.my.apptest.util.UtilFunction.capitalizeName
+import scrooge.my.apptest.util.UtilFunction.getAge
 import scrooge.my.apptest.util.UtilFunction.parsingDate
 
 class SaveDataLocalUseCase(
@@ -17,10 +18,14 @@ class SaveDataLocalUseCase(
         val listSpecialist = getDataRemoteUsesCase.getDataRemote()!!
 
         for (i in listSpecialist) {
-            val birthday = if(i.birthday != null) i.birthday else ""
+            var birthday = if(i.birthday != null) i.birthday else ""
+            birthday = parsingDate(birthday)
+            val age = getAge(birthday)
+
             val specialist = Specialist(
                 avatr_url = i.avatr_url,
-                birthday = parsingDate(birthday),
+                birthday = birthday,
+                age = age,
                 f_name = capitalizeName(i.f_name),
                 l_name = capitalizeName(i.l_name),
                 speciality_id = i.specialty[0].specialty_id

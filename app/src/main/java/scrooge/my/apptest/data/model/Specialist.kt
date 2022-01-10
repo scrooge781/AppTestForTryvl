@@ -16,6 +16,7 @@ data class Specialist(
     val id: Long,
     val avatr_url: String,
     val birthday: String,
+    val age: String,
     val f_name: String,
     val l_name: String,
     val speciality_id: Int
@@ -24,8 +25,9 @@ data class Specialist(
     constructor(
         avatr_url: String,
         birthday: String,
+        age: String,
         f_name: String,
         l_name: String,
         speciality_id: Int
-    ) : this(0, avatr_url, birthday, f_name, l_name, speciality_id)
+    ) : this(0, avatr_url, birthday, age, f_name, l_name, speciality_id)
 }

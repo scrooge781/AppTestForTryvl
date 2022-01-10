@@ -28,20 +28,23 @@ class SpecialistListFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentSpecialistListBinding.inflate(inflater, container, false)
-
-        println(args.getSpecialty.toString())
-        viewModel.getSpecialist(args.getSpecialty.specialty_id)
-
-        viewModel.listSpecialist.observe(viewLifecycleOwner){
-            specialistListAdapter.submitList(it)
-        }
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupRecyclerView()
+        setupObserverViewModel()
+        viewModel.getSpecialist(args.getSpecialty.specialty_id)
+    }
 
+    private fun setupObserverViewModel() {
+        viewModel.listSpecialist.observe(viewLifecycleOwner) {
+            specialistListAdapter.submitList(it)
+        }
+    }
+
+    private fun setupRecyclerView() {
         val rvSpecialistList = binding.rvSpecialist
         with(rvSpecialistList) {
             specialistListAdapter = SpecialistListAdapter(requireContext())

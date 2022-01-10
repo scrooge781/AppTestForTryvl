@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "dc60e9e2d9bc624d95e0655e3cf0ad35",
+    "identityHash": "c08c3f024c5917dc545e4a174419f85c",
     "entities": [
       {
         "tableName": "Specialist",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `avatr_url` TEXT NOT NULL, `birthday` TEXT NOT NULL, `f_name` TEXT NOT NULL, `l_name` TEXT NOT NULL, `speciality_id` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `avatr_url` TEXT NOT NULL, `birthday` TEXT NOT NULL, `age` TEXT NOT NULL, `f_name` TEXT NOT NULL, `l_name` TEXT NOT NULL, `speciality_id` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -23,6 +23,12 @@
           {
             "fieldPath": "birthday",
             "columnName": "birthday",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "age",
+            "columnName": "age",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -84,7 +90,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dc60e9e2d9bc624d95e0655e3cf0ad35')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c08c3f024c5917dc545e4a174419f85c')"
     ]
   }
 }
