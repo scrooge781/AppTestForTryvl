@@ -99,12 +99,14 @@
                     android:id="@+id/birthdayInfoDetailSpecialist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:layout_marginEnd="50dp"
                     android:fontFamily="@font/roboto_medium"
                     android:text="@string/birthday_default_info"
                     android:textColor="@color/color_text_secondary"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvFirstLastNameDetailSpecialist"
                     app:layout_constraintTop_toTopOf="@+id/flNameInfoDetailSpecialist" />
 
                 <TextView

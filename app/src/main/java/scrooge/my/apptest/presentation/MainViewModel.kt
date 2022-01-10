@@ -10,15 +10,15 @@ import javax.inject.Inject
 import kotlinx.coroutines.launch
 import scrooge.my.apptest.data.model.Specialist
 import scrooge.my.apptest.data.model.Specialty
-import scrooge.my.apptest.domain.GetSpecialist
-import scrooge.my.apptest.domain.GetSpeciality
+import scrooge.my.apptest.domain.GetSpecialistUseCase
+import scrooge.my.apptest.domain.GetSpecialityUseCase
 
 @HiltViewModel
 class MainViewModel @Inject
 constructor(
     private val saveDataLocalUseCase: SaveDataLocalUseCase,
-    private val getSpeciality: GetSpeciality,
-    private val getSpecialist: GetSpecialist
+    private val getSpecialityUseCase: GetSpecialityUseCase,
+    private val getSpecialistUseCase: GetSpecialistUseCase
 ) : ViewModel() {
 
     private val _listSpeciality = MutableLiveData<List<Specialty>>()
@@ -29,15 +29,19 @@ constructor(
     val listSpecialist: LiveData<List<Specialist>>
         get() = _listSpecialist
 
+    private val _speciality = MutableLiveData<String>()
+    val speciality: LiveData<String>
+        get() = _speciality
+
     fun getSpeciality() {
         viewModelScope.launch {
-            var listSpecialty = getSpeciality.getSpeciality()
+            var listSpecialty = getSpecialityUseCase.getSpeciality()
             if (!listSpecialty.isNullOrEmpty()) {
                 _listSpeciality.value = listSpecialty
             } else {
                 saveDataLocalUseCase.saveDataLocal()
 
-                listSpecialty = getSpeciality.getSpeciality()
+                listSpecialty = getSpecialityUseCase.getSpeciality()
                 _listSpeciality.value = listSpecialty
             }
         }
@@ -46,7 +50,15 @@ constructor(
 
     fun getSpecialist(speciality_id: Int) {
         viewModelScope.launch {
-            _listSpecialist.value = getSpecialist.getSpecialist(speciality_id)
+            val listSpecialist = getSpecialistUseCase.getSpecialist(speciality_id)
+            _listSpecialist.value = listSpecialist
+        }
+    }
+
+    fun getSpecialityId(speciality_id: Int) {
+        viewModelScope.launch {
+            val speciality = getSpecialityUseCase.getSpecialityId(speciality_id)
+            _speciality.value = speciality.name
         }
     }
 }

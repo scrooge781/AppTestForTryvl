@@ -3,7 +3,7 @@ package scrooge.my.apptest.domain
 import scrooge.my.apptest.data.local.specialist.SpecialistService
 import scrooge.my.apptest.data.model.Specialist
 
-class GetSpecialist(
+class GetSpecialistUseCase(
     private val specialistService: SpecialistService
 ) {
 
