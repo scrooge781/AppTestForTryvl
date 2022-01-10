@@ -3,6 +3,10 @@
 
 
 
+https://user-images.githubusercontent.com/42118036/148751252-737679c9-6a3a-4d35-9ced-8e7e9920d65e.mp4
+
+
+
 Я использую зависимости в проекте: Kotlin, MVVM, Hilt, Gson, Room, Coroutines, Navigation
 
 
